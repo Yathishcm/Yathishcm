@@ -60,7 +60,7 @@ export const mockData = {
       status: "Self-Initiated",
       description: "Planned a Python-based telemetry dashboard using mock F1 data from FastF1 and ergast API. Intended to analyze throttle, braking, and lap-time consistency across race stints.",
       tools: ["Python", "pandas", "matplotlib", "Streamlit"],
-      image: "https://images.unsplash.com/photo-1581028337168-887b61f494e4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwxfHxyYWNpbmclMjBkYXNoYm9hcmR8ZW58MHx8fHwxNzUzNTQ2MDYzfDA&ixlib=rb-4.1.0&q=85"
+      image: "https://images.unsplash.com/photo-1743649978995-c76212449e15?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwxfHxyYWNlJTIwY29udHJvbCUyMGRhc2hib2FyZHxlbnwwfHx8fDE3NTM1NDYzOTV8MA&ixlib=rb-4.1.0&q=85"
     },
     {
       id: 2,
