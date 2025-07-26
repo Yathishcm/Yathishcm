@@ -60,7 +60,7 @@ export const mockData = {
       status: "Self-Initiated",
       description: "Planned a Python-based telemetry dashboard using mock F1 data from FastF1 and ergast API. Intended to analyze throttle, braking, and lap-time consistency across race stints.",
       tools: ["Python", "pandas", "matplotlib", "Streamlit"],
-      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop"
+      image: "https://images.unsplash.com/photo-1581028337168-887b61f494e4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwxfHxyYWNpbmclMjBkYXNoYm9hcmR8ZW58MHx8fHwxNzUzNTQ2MDYzfDA&ixlib=rb-4.1.0&q=85"
     },
     {
       id: 2,
@@ -68,7 +68,7 @@ export const mockData = {
       status: "Concept",
       description: "Designed a regression model to predict lap times based on car setup and weather. Implemented data pre-processing and visualization methods.",
       tools: ["Scikit-learn", "pandas"],
-      image: "https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=600&h=400&fit=crop"
+      image: "https://images.unsplash.com/photo-1742744652734-d5ec6598b5da?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHwyfHxGMSUyMGNhcnN8ZW58MHx8fHwxNzUzNTQ2MDA3fDA&ixlib=rb-4.1.0&q=85"
     },
     {
       id: 3,
@@ -76,7 +76,7 @@ export const mockData = {
       status: "In Progress",
       description: "Simulates pit stop strategies based on tire degradation and race stints. Aimed to reduce race completion time using optimization algorithms.",
       tools: ["Python", "NumPy"],
-      image: "https://images.unsplash.com/photo-1583900985737-6d0495555783?w=600&h=400&fit=crop"
+      image: "https://images.unsplash.com/photo-1583949678953-6e878338d161?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njd8MHwxfHNlYXJjaHwxfHxwaXQlMjBzdG9wfGVufDB8fHx8MTc1MzU0NjA3Nnww&ixlib=rb-4.1.0&q=85"
     }
   ],
 
