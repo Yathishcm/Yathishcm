@@ -6,6 +6,10 @@ import { Textarea } from "./ui/textarea";
 import { Mail, Phone, MapPin, Linkedin, Github, Send, MessageCircle } from "lucide-react";
 import { useToast } from "../hooks/use-toast";
 import { mockData } from '../mock';
+import axios from 'axios';
+
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const API = `${BACKEND_URL}/api`;
 
 const Contact = () => {
   const { personalInfo } = mockData;
@@ -26,19 +30,88 @@ const Contact = () => {
     }));
   };
 
+  const validateForm = () => {
+    if (!formData.name || formData.name.length < 2) {
+      toast({
+        title: "Validation Error",
+        description: "Name must be at least 2 characters long.",
+        variant: "destructive"
+      });
+      return false;
+    }
+
+    if (!formData.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      toast({
+        title: "Validation Error", 
+        description: "Please enter a valid email address.",
+        variant: "destructive"
+      });
+      return false;
+    }
+
+    if (!formData.subject || formData.subject.length < 5) {
+      toast({
+        title: "Validation Error",
+        description: "Subject must be at least 5 characters long.",
+        variant: "destructive"
+      });
+      return false;
+    }
+
+    if (!formData.message || formData.message.length < 10) {
+      toast({
+        title: "Validation Error",
+        description: "Message must be at least 10 characters long.",
+        variant: "destructive"
+      });
+      return false;
+    }
+
+    return true;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    if (!validateForm()) {
+      return;
+    }
+
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      const response = await axios.post(`${API}/contact`, formData);
+      
+      if (response.data.success) {
+        toast({
+          title: "Message Sent Successfully! 🏁",
+          description: response.data.message || "Thank you for reaching out. I'll get back to you soon!",
+        });
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      }
+    } catch (error) {
+      console.error('Contact form error:', error);
+      
+      let errorMessage = "Failed to send message. Please try again.";
+      
+      if (error.response?.status === 429) {
+        errorMessage = "Too many requests. Please try again later.";
+      } else if (error.response?.status === 400) {
+        errorMessage = error.response.data.detail || "Please check your form data.";
+      } else if (error.response?.status >= 500) {
+        errorMessage = "Server error. Please try again in a few minutes.";
+      } else if (error.code === 'NETWORK_ERROR' || !error.response) {
+        errorMessage = "Network error. Please check your connection.";
+      }
+
       toast({
-        title: "Message Sent!",
-        description: "Thank you for reaching out. I'll get back to you soon!",
+        title: "Error Sending Message ❌",
+        description: errorMessage,
+        variant: "destructive"
       });
-      setFormData({ name: '', email: '', subject: '', message: '' });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   const contactInfo = [
@@ -117,6 +190,7 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
+                      disabled={isSubmitting}
                       className="bg-gray-800 border-gray-700 text-white focus:border-red-600 focus:ring-red-600"
                       placeholder="Your name"
                     />
@@ -131,6 +205,7 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
+                      disabled={isSubmitting}
                       className="bg-gray-800 border-gray-700 text-white focus:border-red-600 focus:ring-red-600"
                       placeholder="your.email@example.com"
                     />
@@ -147,6 +222,7 @@ const Contact = () => {
                     value={formData.subject}
                     onChange={handleInputChange}
                     required
+                    disabled={isSubmitting}
                     className="bg-gray-800 border-gray-700 text-white focus:border-red-600 focus:ring-red-600"
                     placeholder="What's this about?"
                   />
@@ -161,6 +237,7 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleInputChange}
                     required
+                    disabled={isSubmitting}
                     rows={5}
                     className="bg-gray-800 border-gray-700 text-white focus:border-red-600 focus:ring-red-600 resize-none"
                     placeholder="Tell me about your project or opportunity..."
@@ -170,12 +247,12 @@ const Contact = () => {
                 <Button 
                   type="submit" 
                   disabled={isSubmitting}
-                  className="w-full bg-red-600 hover:bg-red-700 text-white py-3 text-lg font-medium transition-all duration-200 hover:shadow-lg hover:shadow-red-600/25 disabled:opacity-50"
+                  className="w-full bg-red-600 hover:bg-red-700 text-white py-3 text-lg font-medium transition-all duration-200 hover:shadow-lg hover:shadow-red-600/25 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? (
                     <>
                       <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
-                      Sending...
+                      Sending Message...
                     </>
                   ) : (
                     <>
