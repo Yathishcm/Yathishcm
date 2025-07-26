@@ -102,5 +102,44 @@ export const mockData = {
     languages: ["Python", "C++", "SQL"],
     tools: ["Git", "GitHub", "Excel", "Tableau", "MATLAB (beginner)", "FastF1", "Jupyter Notebooks"],
     platforms: ["Windows", "Linux"]
-  }
+  },
+
+  motorsportGallery: [
+    {
+      id: 1,
+      title: "F1 Technology",
+      image: "https://images.unsplash.com/photo-1716583145250-4cdb9b9885eb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHwxfHxGMSUyMGNhcnN8ZW58MHx8fHwxNzUzNTQ2MDA3fDA&ixlib=rb-4.1.0&q=85",
+      description: "Modern F1 car showcasing advanced aerodynamics"
+    },
+    {
+      id: 2,
+      title: "Racing Circuits",
+      image: "https://images.unsplash.com/photo-1565544843827-187614119ea7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzV8MHwxfHNlYXJjaHwxfHxyYWNpbmclMjBjaXJjdWl0c3xlbnwwfHx8fDE3NTM1NDYwMTR8MA&ixlib=rb-4.1.0&q=85",
+      description: "Iconic racing circuits and track analysis"
+    },
+    {
+      id: 3,
+      title: "Le Mans Racing",
+      image: "https://images.unsplash.com/photo-1686643134696-7df61d2df557?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njd8MHwxfHNlYXJjaHwxfHxMZSUyME1hbnMlMjByYWNpbmd8ZW58MHx8fHwxNzUzNTQ2MDU1fDA&ixlib=rb-4.1.0&q=85",
+      description: "LMGT cars and endurance racing analysis"
+    },
+    {
+      id: 4,
+      title: "Racing Data",
+      image: "https://images.unsplash.com/photo-1608754333267-43894d93d2a0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2Mzl8MHwxfHNlYXJjaHwxfHxGMSUyMHN0ZWVyaW5nJTIwd2hlZWx8ZW58MHx8fHwxNzUzNTQ2MDcwfDA&ixlib=rb-4.1.0&q=85",
+      description: "F1 steering wheel and telemetry systems"
+    },
+    {
+      id: 5,
+      title: "Pit Stop Strategy",
+      image: "https://images.unsplash.com/photo-1579987323085-529f1a806810?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njd8MHwxfHNlYXJjaHwyfHxwaXQlMjBzdG9wfGVufDB8fHx8MTc1MzU0NjA3Nnww&ixlib=rb-4.1.0&q=85",
+      description: "Professional pit stop operations and timing"
+    },
+    {
+      id: 6,
+      title: "Race Action",
+      image: "https://images.unsplash.com/photo-1553618737-997fbd5bf9b4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzV8MHwxfHNlYXJjaHwyfHxyYWNpbmclMjBjaXJjdWl0c3xlbnwwfHx8fDE3NTM1NDYwMTR8MA&ixlib=rb-4.1.0&q=85",
+      description: "Live racing action and competitive analysis"
+    }
+  ]
 };
