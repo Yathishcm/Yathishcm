@@ -9,7 +9,7 @@ export const mockData = {
     email: "yathishcmmotorsports@gmail.com",
     linkedin: "https://www.linkedin.com/in/yathishcm",
     github: "https://github.com/Yathishcm",
-    profileImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
+    profileImage: "https://customer-assets.emergentagent.com/job_motorsport-dev/artifacts/unt1ka31_WhatsApp%20Image%202025-03-26%20at%2012.38.18_ca3e3181.jpg"
   },
 
   professionalSummary: "Motorsport-enthusiastic Computer Science Engineering student with a strong foundation in Python, data structures, and algorithms. Passionate about motorsports telemetry, performance analysis, and data-driven decision-making. Actively learning motorsport data tools and analysis methods. Ready to contribute to high-performance teams in motorsport and automotive analytics environments.",
